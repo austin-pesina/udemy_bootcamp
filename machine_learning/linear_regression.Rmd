@@ -1,0 +1,59 @@
+---
+title: "Linear Regression"
+author: "Austin Pesina"
+date: "9/16/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Linear Regresson
+
+
+### Exploratory Analysis
+
+Read csv and prep dataframe
+
+```{r}
+df <- read.csv("data/student-mat.csv", sep = ";")
+head(df)
+summary(df)
+any(is.na(df)) # No NA values
+str(df)
+```
+
+
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(corrgram)
+library(corrplot)
+
+
+num_cols <- sapply(df, is.numeric)
+corr_data <- cor(df[,num_cols])
+corr_data
+corrplot(corr_data, method = "color")
+
+ggplot(df, aes(x = G3)) +
+  geom_histogram(bins = 20, alpha = 0.5, fill = "blue")
+```
+
+
+
+
+###
+
+
+```{r}
+
+```
+
+
+
+```{r}
+
+```

@@ -1,0 +1,76 @@
+---
+title: "While Loops"
+author: "Austin Pesina"
+date: "9/16/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# While Loops
+
+```{r}
+while (condition){
+  # Code executed here
+  # while condition is true
+}
+```
+
+
+```{r}
+x <-0
+
+while(x<10){
+  print(paste0("x is: ", x))
+  
+  x <- x+1
+  if(x==5){
+    print("X is now equal to 5! Break Loop!")
+    break
+  }
+}
+```
+
+
+# For Loops
+ 
+```{r}
+v <- c(1,2,3,4,5)
+
+for (i in v) {
+  result <- i + 1
+  print("The i plus 1 is equal to:")
+  print(result)
+}
+```
+
+### List
+
+```{r}
+my.list <- list(c(1,2,3),mtcars,12)
+for (item in my.list){
+  print(item)
+}
+```
+### Matrix
+
+```{r}
+mat <- matrix(1:25, nrow=5)
+for(num in mat){
+  print(num)
+}
+```
+
+
+### Nested For Loops
+```{r}
+mat <- matrix(1:25, nrow=5)
+for (row in 1:nrow(mat)){
+  for (col in 1:ncol(mat)) {
+    print(paste("The selected row is:", row))
+    print(paste("The element at row:",row, "and col:", col, "is", mat[row,col]))
+  }
+}
+```
